@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+    canvas {
+        display: block;
+        margin: 0 auto;
+    }
+    
+    button#btn {
+        position: absolute;
+        /* z-index: 10; */
+        top: 250px;
+        left: 50%;
+        margin-left: -50px;
+        width: 100px;
+        height: 40px;
+        border: none;
+        background-color: #ccc;
+        font-size: 20px;
+        box-shadow: 0 0 15px 0 #fff inset;
+        display: none;
+    }
+    
+    button#btn:before {
+        content: "";
+        position: absolute;
+        left: -350px;
+        top: -242px;
+        width: 800px;
+        height: 600px;
+        background-color: rgba(0, 0, 0, .3);
+        /* z-index: -1; */
+    }
+    </style>
+</head>
+
+<body>
+    <canvas id="cv" width="800" height="600">Sorry,your browser isn't support canvas element</canvas>
+    <button id="btn">again</button>
+    <script src="js/Fly.js"></script>
+    <script src="js/Bird.js"></script>
+    <script src="js/Sky.js"></script>
+    <script src="js/Land.js"></script>
+    <script src="js/Pipe.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/Time.js"></script>
+    <script>
+    var cv = document.getElementById("cv");
+    var ctx = cv.getContext('2d');
+    var btn = document.getElementById("btn");
+
+    // 游戏材料
+    var arr = ["birds", "land", "pipe1", "pipe2", "sky"];
+
+    var o1 = Fly.Game({
+        context: ctx,
+        imgNameList: arr
+    });
+    o1.gameStart();
+
+
+    btn.onclick = function() {
+        o1.gameStart();
+        btn.style.display = "none";
+    };
+    </script>
+</body>
+
+</html>
