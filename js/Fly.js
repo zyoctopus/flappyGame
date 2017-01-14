@@ -2,7 +2,7 @@
  * @Author: octopus
  * @Date:   2017-01-10 14:10:31
  * @Last Modified by:   octopus
- * @Last Modified time: 2017-01-12 10:09:12
+ * @Last Modified time: 2017-01-14 23:38:16
  */
 
 (function(w) {
@@ -39,19 +39,14 @@
         switch (name) {
             case "Sky":
                 return new Fly.Sky(obj);
-                break;
             case "Pipe":
                 return new Fly.Pipe(obj);
-                break;
             case "Land":
                 return new Fly.Land(obj);
-                break;
             case "Bird":
                 return new Fly.Bird(obj);
-                break;
             case "Timing":
                 return new Fly.Timing(obj);
-                break;
             default:
                 return null;
         }
